@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Расчёт объёма фигур</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Калькулятор объёма геометрических фигур</h2>
+    <form method="POST">
+        <label>Фигура:</label>
+        <select name="figure">
+            <option value="cube">Куб</option>
+            <option value="sphere">Сфера</option>
+            <option value="cylinder">Цилиндр</option>
+        </select>
+        <br><br>
+        <label>Параметр:</label>
+        <input type="text" name="param" placeholder="Введите число">
+        <br><br>
+        <button type="submit">Рассчитать</button>
+    </form>
+
+    {% if result %}
+        <h3>Результат: {{ result }} куб. ед.</h3>
+    {% endif %}
+    {% if error %}
+        <h3 style="color: red;">{{ error }}</h3>
+    {% endif %}
+</body>
+</html>
